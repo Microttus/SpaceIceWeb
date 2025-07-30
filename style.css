@@ -1,0 +1,138 @@
+@font-face {
+  font-family: "JetBrains Sans";
+  src: url("fonts/JetBrainsSans-Regular.woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Regular.woff2");
+}
+
+/* Root theme */
+:root {
+  font-family: "JetBrains Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000000;
+}
+
+/* 1) VIDEO BEHIND EVERYTHING */
+/*#bg-video {*/
+/*  position: fixed;    !* pin it to the viewport *!*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  object-fit: cover;*/
+/*  z-index: -1;        !* behind all other elements *!*/
+/*}*/
+
+/* 2) HERO NAVBAR AT TOP */
+/* Make the header a flex container */
+.hero-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, nav right */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+/* Logo container */
+.hero-banner .logo img {
+  height: 50px;      /* adjust to taste */
+  width: auto;
+  display: block;
+}
+
+/* Adjust nav-links so they shrink-wrap next to the logo */
+.hero-banner nav {
+  flex: 1;          /* take remaining space */
+}
+
+.nav-links {
+  justify-content: flex-end; /* keep links on the right */
+}
+
+/* 3) INLINE WHITE LINKS, NO BULLETS */
+.nav-links {
+  list-style: none;    /* remove bullets */
+  margin: 0;           /* remove default UL margin */
+  padding: 0;          /* remove default UL padding */
+  display: flex;       /* lay items out horizontally */
+  justify-content: flex-end;
+  gap: 30px;           /* space between links */
+}
+
+.nav-links li a {
+  color: white;        /* white text */
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+  color: #00d4ff;
+}
+
+/* 4) SCROLL-DOWN BOX OVER VIDEO */
+.content-box {
+  position: relative;
+  margin-top: 100vh;   /* drop it exactly one viewport-height below top */
+  padding: 80px 20px;
+  background: rgba(0,0,0,0.85);
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  z-index: 5;          /* above the video, below the nav */
+}
+
+/* Example typography inside your box */
+.content-box h1 {
+  font-family: "JetBrains Sans", sans-serif;
+  font-weight: 300;
+  font-size: 2.4rem;
+  margin-bottom: 0.5em;
+}
+
+.content-box p {
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Utility and layout */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-image: url("/background.svg");
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .content-box h1 {
+    font-size: 1.8rem;
+  }
+
+  .content-box p {
+    font-size: 1rem;
+  }
+}
