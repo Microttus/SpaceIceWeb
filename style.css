@@ -1,62 +1,68 @@
-/* Prevent 100%+padding overflow */
-*, *::before, *::after { box-sizing: border-box; }
+/* ====== Reset + fonts ====== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
 @font-face {
   font-family: "JetBrains Sans";
   src: url("fonts/JetBrainsSans-Regular.woff2");
 }
-
 @font-face {
   font-family: "JetBrains Mono";
   src: url("fonts/JetBrainsMono-Regular.woff2");
 }
 
-/* Root theme */
+/* Root / theme */
 :root {
+  --fg: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.7);
+  --accent: #00d4ff;
+  --header-h: 84px; /* fallback; JS can set real height */
   font-family: "JetBrains Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #000000;
+  color: var(--fg);
+  background-color: #000;
 }
 
-/* 1) VIDEO BEHIND EVERYTHING */
-#bg-video {
-  position: fixed;    /* pin it to the viewport */
+/* ====== VIDEO - only visible on home pages ======
+   This makes the video appear behind everything only when body has .home-page
+*/
+body.home-page #bg-video {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;        /* behind all other elements */
+  z-index: -1;
 }
 
-/* 2) HERO NAVBAR AT TOP */
-/* Hero banner */
+/* If a page doesn't include the video element, nothing is shown; safe for multi-page setup */
+
+/* ====== Header / Hero banner (shared across pages) ====== */
 .hero-banner {
-  position: fixed;                /* stick to top */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 40px;
+  padding: 18px 36px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* logo left, nav right */
-  background: rgba(0, 0, 0, 0.4); /* transparent glassy bar */
+  justify-content: space-between;
+  background: rgba(0,0,0,0.36);
   backdrop-filter: blur(8px);
-  z-index: 10;                    /* over the video */
+  z-index: 1000;
 }
 
-/* Logo sizing */
+/* logo */
 .hero-banner .logo img {
-  height: 50px;                   /* adjust to taste */
+  height: 48px;
   width: auto;
   display: block;
 }
 
-/* Let nav use remaining inline space */
+/* nav */
 .hero-banner nav { flex: 1; }
-
-/* Inline white links, no bullets */
 .nav-links {
   list-style: none;
   margin: 0;
@@ -64,73 +70,165 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;                /* wrap on smaller widths instead of overflowing */
+  gap: 28px;
+  flex-wrap: wrap;
 }
-
-.nav-links li a {
+.nav-links a {
+  color: var(--fg);
   text-decoration: none;
-  color: white;
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
-  font-size: 1.1rem;
-  transition: color 0.2s ease;
+  font-size: 1.05rem;
+  transition: color .18s ease, opacity .18s ease;
 }
+.nav-links a:hover { color: var(--accent); }
 
-.nav-links li a:hover { color: #00d4ff; }
+/* make sure header height variable is available */
+:root { --header-h: 84px; }
+.hero-banner { height: var(--header-h); }
 
-
-/* 4) SCROLL-DOWN BOX OVER VIDEO */
+/* ====== Base content box (shared common properties) ====== */
 .content-box {
-  position: relative;
-  margin-top: 100vh;   /* drop it exactly one viewport-height below top */
-  padding: 80px 20px;
-  background: rgba(0,0,0,0.85);
-  color: rgba(255,255,255,0.9);
-  text-align: center;
-  z-index: 5;          /* above the video, below the nav */
+  width: min(1100px, 94%);
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* Example typography inside your box */
-.content-box h1 {
+/* ====== Home page variant (dark overlay sitting on top of the video) ====== */
+.home-page .content-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6); /* overlay background */
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  max-width: 600px;
+}
+body.home-page .content-box h1 {
   font-family: "JetBrains Sans", sans-serif;
   font-weight: 300;
   font-size: 2.4rem;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.4rem;
+}
+body.home-page .content-box p { max-width: 720px; margin: 0.6rem auto 0; }
+
+/* ====== About page variant (light card on top of image bg) ====== */
+body.about-page {
+  background: url("images/about-bg.jpg") center center / cover no-repeat fixed;
+  color: #111; /* primary text inside white card */
+}
+body.about-page .content-box {
+  margin: 120px auto;
+  padding: 40px 36px;
+  background: rgba(255,255,255,0.96);
+  color: #111;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  border-radius: 12px;
+  text-align: left;
+}
+body.about-page .content-box h1 {
+  font-family: "JetBrains Sans", sans-serif;
+  font-weight: 400;
+  font-size: 2.0rem;
+  margin-bottom: 0.5rem;
+}
+body.about-page .content-box p { line-height: 1.6; margin: 0.6rem 0; }
+
+/* ====== Projects page variant (example) ====== */
+body.projects-page {
+  background: url("images/projects-bg.jpg") center center / cover no-repeat fixed;
+}
+body.projects-page .content-box {
+  margin: 120px auto;
+  padding: 36px;
+  background: rgba(10,10,12,0.7);
+  color: var(--fg);
 }
 
-.content-box p {
-  font-weight: 300;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
+/* ====== Publication page ====== */
+.publications-page {
+  background: url("images/publications-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
-/* Utility and layout */
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+/* Container for all publications */
+.publications-container {
+  margin-top: 120px;   /* leave room for navbar */
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  /*background-image: url("/background.svg");*/
+  gap: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .nav-links {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+/* Each publication box */
+.publication-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  .content-box h1 {
-    font-size: 1.8rem;
-  }
+/* Hover effect */
+.publication-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
 
-  .content-box p {
-    font-size: 1rem;
-  }
+.publication-box h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.publication-box p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.publication-box a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.publication-box a:hover {
+  text-decoration: underline;
+}
+
+
+/* ====== Utility / layout ====== */
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* buttons and small utilities (shared) */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.btn--primary { background: rgba(0,212,255,0.12); border-color: rgba(0,212,255,0.5); }
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .hero-banner { padding: 12px 18px; }
+  .nav-links { gap: 14px; font-size: 0.98rem; }
+  body.about-page .content-box { margin: 80px 18px; padding: 28px; }
+  body.home-page .content-box { padding: 48px 18px; }
 }

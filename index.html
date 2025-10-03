@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IceCube Solutions</title>
+  <title>HOME | IceCube Solutions</title>
   <link rel="stylesheet" href="/style.css" />
   <link rel="icon" href="/icecube_ppa.png" type="image/x-icon" />
 </head>
-<body>
+<body class="home-page">
 
   <!-- 🎥 Background Video -->
   <video autoplay muted loop id="bg-video">
@@ -20,21 +20,19 @@
    <header class="hero-banner">
     <!-- Logo on the left -->
     <div class="logo">
-      <a href="/">
-        <img src="/icecube_ppa.png" alt="IceCube Logo" />
-      </a>
+      <a href="index.html"><img src="icecube_ppa.png" alt="IceCube Logo"></a>
     </div>
 ||
     <!-- Nav on the right -->
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+     <nav>
+       <ul class="nav-links">
+         <li><a href="index.html" class="active">Home</a></li>
+         <li><a href="projects.html">Projects</a></li>
+         <li><a href="publications.html">Publictions</a></li>
+         <li><a href="about.html">About</a></li>
+         <li><a href="contact.html">Contact</a></li>
+       </ul>
+     </nav>
   </header>
 
   <!-- 📦 Scroll Down Content -->
@@ -44,6 +42,7 @@
       <p>This is where innovation and ice collide.</p>
     </section>
   </main>
+
 
   <script src="/src/main.js" type="module"></script>
 </body>
