@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/style.css" />
   <link rel="icon" href="icecube_ppa.png" type="image/x-icon" />
 </head>
-<body class="home-page">
+<body class="projects-page">
 
 <!-- 🚀 Hero Navigation -->
 <header class="hero-banner">
@@ -30,13 +30,103 @@
 <main class="projects-container">
 
   <!-- PROJECT ITEM -->
+  <article class="project-card featured">
+    <!-- YEAR / TIMELINE MARKER -->
+    <span class="project-date">2025</span>
+
+    <button class="project-header">
+      <div class="project-header-main">
+        <h2>
+          Open-Source Sensorised Elastic Actuator
+          <span class="badge badge-published">Published · HardwareX (Elsevier)</span>
+        </h2>
+
+        <p class="project-ingress">
+          Design and validation of a low-cost, open-source, sensorised elastic actuator
+          for safe human–robot interaction in prosthetic and orthotic applications.
+        </p>
+
+        <!-- TAGS -->
+        <div class="project-tags">
+          <span class="tag">Mechatronics</span>
+          <span class="tag">Compliant Actuation</span>
+          <span class="tag">Control Systems</span>
+          <span class="tag">Embedded C++</span>
+          <span class="tag">Open Source</span>
+        </div>
+      </div>
+    </button>
+
+    <div class="project-details">
+      <h3>Goals</h3>
+      <p>
+        The goal of this project was to develop a safe, affordable, and fully
+        sensorised elastic actuator suitable for prosthetic and orthotic devices.
+        A key objective was to make compliant actuation accessible to students,
+        researchers, and practitioners through an open-source hardware and
+        software framework.
+      </p>
+
+      <h3>Scope</h3>
+      <p>
+        Research and development project conducted within an academic research
+        group, resulting in a peer-reviewed HardwareX publication. The work
+        covers mechanical design, electronics, control architecture, and
+        experimental validation, with emphasis on reproducibility, modularity,
+        and low-cost fabrication using 3D printing.
+      </p>
+
+      <h3>Implementation</h3>
+      <p>
+        The actuator is based on a series elastic actuator (SEA) architecture
+        using a belt-driven DC motor, radial springs, dual encoders, load cells,
+        and inertial sensing. Control software is implemented in embedded C++
+        on low-cost microcontrollers and supports both impedance and admittance
+        control. The complete system—including CAD files, schematics, firmware,
+        and documentation—is released under an open-source license.
+      </p>
+
+      <h3>What I Learned</h3>
+      <p>
+        This project provided extensive experience in designing compliant robotic
+        actuators for safe physical interaction. I gained deep insight into elastic
+        actuator modelling, impedance and admittance control, sensor fusion, and
+        real-time embedded programming. The work also strengthened my skills in
+        research-driven development, experimental validation, and producing
+        reproducible open-source hardware.
+      </p>
+
+      <!-- LINKS -->
+      <div class="project-links">
+        <a href="https://doi.org/YOUR_DOI" target="_blank" rel="noopener">
+          Read the paper
+        </a>
+        <a href="https://osf.io/4eujq/" target="_blank" rel="noopener">
+          Open-source repository
+        </a>
+      </div>
+
+      <div class="project-media">
+        <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                title="Sensorised elastic actuator demo"
+                allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </article>
+
+
+
   <article class="project-card">
+    <span class="project-date">2025</span>
     <button class="project-header">
       <div class="project-header-main">
         <h2>Haptic Teleoperation for Industrial Robots</h2>
 
         <p class="project-ingress">
-          Human-in-the-loop teleoperation of robotic manipulators using a custom haptic device.
+          Human-in-the-loop teleoperation of an industrial robot arm using a custom,
+          low-cost haptic glove with real-time force feedback for pick-and-place tasks.
         </p>
 
         <!-- TAGS -->
@@ -45,31 +135,288 @@
           <span class="tag">C++</span>
           <span class="tag">Haptics</span>
           <span class="tag">Control</span>
+          <span class="tag">Human–Robot Interaction</span>
         </div>
       </div>
 
-      <span class="project-date">2024</span>
     </button>
 
     <div class="project-details">
       <h3>Goals</h3>
-      <p>Enable intuitive control of industrial robot arms through force-feedback interfaces.</p>
+      <p>
+        The primary goal of this project was to design and evaluate a haptic teleoperation
+        system that enables intuitive and safe control of an industrial robotic manipulator.
+        A key objective was to convey meaningful force feedback to the operator, allowing
+        them to adapt grip force and motion based on tactile cues rather than vision alone.
+      </p>
 
       <h3>Scope</h3>
-      <p>Research-grade prototyping with real-time constraints.</p>
+      <p>
+        This project was developed as a research-oriented prototype with real-time
+        performance constraints. The focus was on modularity, human–robot interaction,
+        and experimental validation rather than production readiness. Emphasis was placed
+        on low-cost hardware, 3D-printable mechanical components, and an open software
+        architecture suitable for rapid iteration and future research.
+      </p>
 
       <h3>Implementation</h3>
-      <p>Implemented in C++ using ROS2 with custom hardware drivers.</p>
+      <p>
+        The system is implemented in C++ using ROS 2, with MicroROS-based microcontrollers
+        handling distributed sensing and actuation. A custom-designed haptic glove tracks
+        finger motion and provides force feedback using servo-actuated links and impedance
+        control. The glove teleoperates an industrial robot arm equipped with a soft robotic
+        gripper, enabling pick-and-place of objects with varying stiffness. The software
+        architecture is fully modular, allowing vision, haptics, control, and robot interfaces
+        to be developed and tested independently.
+      </p>
+
+      <h3>What I Learned</h3>
+      <p>
+        This project provided hands-on experience with designing real-time human–robot
+        interaction systems, highlighting the challenges of stability, latency, and feedback
+        fidelity in haptic control loops. I gained practical insight into ROS 2 system design,
+        distributed control using microcontrollers, and impedance-based force feedback.
+        The work also reinforced the importance of modular software architecture and
+        mechanical simplicity when developing experimental robotic systems.
+      </p>
 
       <div class="project-media">
         <iframe
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                title="Project demo"
+                src="https://youtu.be/232cmVQ_QTI?si=zNOMS3wxwtDfxCJv"
+                title="Haptic teleoperation project demo"
                 allowfullscreen>
         </iframe>
       </div>
     </div>
   </article>
+
+  <article class="project-card">
+    <!-- YEAR / TIMELINE MARKER -->
+    <span class="project-date">2023</span>
+
+    <button class="project-header">
+      <div class="project-header-main">
+        <h2>Parametric Gear Generator</h2>
+
+        <p class="project-ingress">
+          Development of a parametric gear generation tool for designing and visualizing
+          involute spur gears based on standard mechanical design parameters.
+        </p>
+
+        <!-- TAGS -->
+        <div class="project-tags">
+          <span class="tag">Mechanical Design</span>
+          <span class="tag">Kinematics</span>
+          <span class="tag">MATLAB</span>
+          <span class="tag">Geometry</span>
+          <span class="tag">Visualization</span>
+        </div>
+      </div>
+    </button>
+
+    <div class="project-details">
+      <h3>Goals</h3>
+      <p>
+        The goal of this project was to develop a parametric tool capable of generating
+        accurate involute gear profiles from fundamental design parameters such as
+        module, number of teeth, pressure angle, and profile shift. Emphasis was placed
+        on correctness, flexibility, and clear geometric interpretation.
+      </p>
+
+      <h3>Scope</h3>
+      <p>
+        Course project focused on analytical modeling and implementation of gear
+        geometry rather than CAD automation or manufacturing optimization. The tool
+        is intended for educational use, early-stage design exploration, and validation
+        of mechanical concepts.
+      </p>
+
+      <h3>Implementation</h3>
+      <p>
+        The gear generator was implemented in MATLAB using closed-form expressions
+        for involute geometry and gear tooth construction. The script computes base,
+        pitch, and addendum circles, generates tooth profiles parametrically, and
+        visualizes complete gears by rotational replication. The implementation allows
+        rapid iteration and immediate visual feedback when adjusting design parameters.
+      </p>
+
+      <h3>What I Learned</h3>
+      <p>
+        This project deepened my understanding of involute gear theory and the
+        relationship between abstract design parameters and physical geometry.
+        I gained experience translating mechanical design equations into robust,
+        reusable code and learned the value of visualization as a validation tool
+        for analytical models.
+      </p>
+
+      <div class="project-media">
+        <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                title="Parametric gear generator demo"
+                allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </article>
+
+
+  <article class="project-card">
+    <!-- YEAR / TIMELINE MARKER -->
+    <span class="project-date">2022</span>
+
+    <button class="project-header">
+      <div class="project-header-main">
+        <h2>Drone Arena for Reinforcement Learning</h2>
+
+        <p class="project-ingress">
+          Design and development of a physical training arena for autonomous drones,
+          enabling safe, continuous reinforcement learning in a real-world environment.
+        </p>
+
+        <!-- TAGS -->
+        <div class="project-tags">
+          <span class="tag">Robotics</span>
+          <span class="tag">Autonomous Systems</span>
+          <span class="tag">Mechanical Design</span>
+          <span class="tag">Embedded Systems</span>
+          <span class="tag">Computer Vision</span>
+        </div>
+      </div>
+    </button>
+
+    <div class="project-details">
+      <h3>Goals</h3>
+      <p>
+        The goal of this project was to design a safe and autonomous physical arena
+        where drones can be trained using reinforcement learning techniques outside
+        of simulation. The system aims to protect both the drone and its surroundings
+        while enabling long-duration, unattended training cycles.
+      </p>
+
+      <h3>Scope</h3>
+      <p>
+        Bachelor-level group project focused on conceptual design, mechanical
+        construction, and system architecture. The work emphasizes safety,
+        modularity, and portability, while laying the foundation for future
+        integration of reinforcement learning algorithms and distributed control.
+      </p>
+
+      <h3>Implementation</h3>
+      <p>
+        The arena consists of a modular mechanical structure with a central actuator
+        system that repositions and reorients the drone to a known starting pose
+        after each training iteration. A depth camera and visual markers are used
+        to estimate drone position and orientation, while a Raspberry Pi controls
+        arena actuators and peripheral hardware. The system is designed to
+        communicate with an external computation unit responsible for vision
+        processing and learning.
+      </p>
+
+      <h3>What I Learned</h3>
+      <p>
+        This project provided practical experience in designing safety-critical
+        robotic systems and translating abstract research requirements into
+        mechanical and architectural solutions. I gained hands-on experience with
+        system-level design, sensor integration, and the challenges of bringing
+        reinforcement learning concepts from simulation into physical environments.
+        The work also highlighted the importance of modularity and maintainability
+        in long-running autonomous systems.
+      </p>
+
+      <div class="project-media">
+        <iframe
+                src="https://youtu.be/ZGEVs7iNo5A"
+                title="Drone Arena project demo"
+                allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <!-- YEAR / TIMELINE MARKER -->
+    <span class="project-date">2021</span>
+
+    <button class="project-header">
+      <div class="project-header-main">
+        <h2>
+          Mechatronics Home Lab for Undergraduate Teaching
+          <span class="badge badge-published">Student Paper · UiA</span>
+        </h2>
+
+        <p class="project-ingress">
+          Design and implementation of a low-cost, 3D-printable mechatronics
+          home laboratory to support hands-on undergraduate education in
+          instrumentation and control systems.
+        </p>
+
+        <!-- TAGS -->
+        <div class="project-tags">
+          <span class="tag">Mechatronics Education</span>
+          <span class="tag">Control Systems</span>
+          <span class="tag">Embedded Systems</span>
+          <span class="tag">MATLAB / Simulink</span>
+          <span class="tag">3D Printing</span>
+        </div>
+      </div>
+    </button>
+
+    <div class="project-details">
+      <h3>Goals</h3>
+      <p>
+        The goal of this project was to create an affordable and portable
+        mechatronics laboratory that enables students to perform meaningful
+        hands-on experiments outside traditional university lab facilities.
+        The platform was designed to strengthen the connection between theory
+        and practice in instrumentation, measurement, and control.
+      </p>
+
+      <h3>Scope</h3>
+      <p>
+        Bachelor-level collaborative project focused on educational system
+        design. The work includes mechanical design, electronics integration,
+        control experiments, and curriculum-aligned laboratory exercises.
+        Particular emphasis was placed on accessibility, robustness, and
+        reproducibility for large student cohorts.
+      </p>
+
+      <h3>Implementation</h3>
+      <p>
+        The home lab is built around a microcontroller-based platform with
+        modular sensors and actuators, mounted on a custom 3D-printed base
+        to ensure mechanical stability and low noise. A sequence of experiments
+        was developed, ranging from first-order temperature control and load
+        cell calibration to multi-axis drone thrust, pitch, roll, and altitude
+        control using MATLAB/Simulink and hardware-in-the-loop techniques.
+      </p>
+
+      <h3>What I Learned</h3>
+      <p>
+        This project provided experience in designing robust experimental
+        platforms for education, balancing technical complexity with usability.
+        I gained insight into control education, system identification, sensor
+        fusion, and hardware-in-the-loop simulation, as well as the practical
+        challenges students face when transitioning from simulation to real
+        hardware.
+      </p>
+
+      <!-- LINKS -->
+      <div class="project-links">
+        <a href="YOUR_PDF_LINK_HERE" target="_blank" rel="noopener">
+          Read the paper
+        </a>
+      </div>
+
+      <div class="project-media">
+        <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                title="Mechatronics home lab demonstration"
+                allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </article>
+
 
 
   <!-- Add more project-card blocks as needed -->

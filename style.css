@@ -180,7 +180,33 @@ body.about-page .content-box strong {
   body.about-page .content-box h1 {
     font-size: 1.8rem;
   }
+  .about-header {
+    float: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 24px 0;
+  }
+
+  .about-photo {
+    width: 140px;
+  }
 }
+
+/* About page header layout */
+.about-header {
+  float: right;
+  margin: 0 0 16px 32px; /* space between image and text */
+}
+
+/* Profile photo */
+.about-photo {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  object-fit: cover;
+}
+
 
 /* ====== Publication page ====== */
 .publications-page {
@@ -276,6 +302,12 @@ body.about-page .content-box strong {
   width: 100%;
 }
 
+.project-header-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
 .project-header h2 {
   margin: 0;
   font-size: 1.4rem;
@@ -288,6 +320,7 @@ body.about-page .content-box strong {
   font-size: 1rem;
   color: #444;
   max-width: 720px;
+  word-wrap: break-word;
 }
 
 .project-date {
@@ -295,7 +328,11 @@ body.about-page .content-box strong {
   font-size: 0.9rem;
   color: #666;
   white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: 16px;
+  margin-top: 16px;
 }
+
 
 /* Expandable section */
 .project-details {
