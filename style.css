@@ -119,7 +119,7 @@ body.home-page .content-box p { max-width: 720px; margin: 0.6rem auto 0; }
 
 /* ====== About page variant (light card on top of ice background) ====== */
 body.about-page {
-  background: url("/ice_web_bg.png") center center / cover no-repeat fixed;
+  background: url("/public/ice_web_bg.png") center center / cover no-repeat fixed;
   color: #111;
   background-color: #eaf6ff; /* fallback tone if image fails */
 }
@@ -210,7 +210,7 @@ body.about-page .content-box strong {
 
 /* ====== Publication page ====== */
 .publications-page {
-  background: url("/generic_ice_bg.png") no-repeat center center fixed;
+  background: url("/public/generic_ice_bg.png") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -267,7 +267,7 @@ body.about-page .content-box strong {
 
 /* ===== Projects page ===== */
 .projects-page {
-  background: url("/generic_ice_bg.png") no-repeat center center fixed;
+  background: url("/public/generic_ice_bg.png") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -401,7 +401,7 @@ body.about-page .content-box strong {
 
 /* Contact page background */
 .contact-page {
-  background: url("spaceice.png") no-repeat center center fixed;
+  background: url("public/spaceice.png") no-repeat center center fixed;
   background-size: cover;
 }
 
