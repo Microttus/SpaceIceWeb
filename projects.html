@@ -120,10 +120,87 @@
     </div>
   </article>
 
+  <article class="project-card">
+    <!-- YEAR / TIMELINE MARKER -->
+    <span class="project-date">2023-2025</span>
+
+    <button class="project-header">
+      <div class="project-header-main">
+        <h2>Icebar – Minimal Dock for Tiling Window Managers</h2>
+
+        <p class="project-ingress">
+          A lightweight, Docker-distributed application dock for bspwm and i3,
+          designed to be static, minimal, and configurable, with a Go-based backend.
+        </p>
+
+        <!-- TAGS -->
+        <div class="project-tags">
+          <span class="tag">Go</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Desktop UI</span>
+          <span class="tag">Tiling WMs</span>
+        </div>
+      </div>
+    </button>
+
+    <div class="project-details">
+      <h3>Goals</h3>
+      <p>
+        The primary goal of this project was to design a simple and predictable
+        application dock for tiling window managers such as bspwm and i3.
+        A major personal objective was to deepen my understanding of Go by
+        building a complete, real-world application with a clean internal structure.
+      </p>
+
+      <h3>Scope</h3>
+      <p>
+        Personal tooling project focused on usability, maintainability, and
+        minimalism. The dock intentionally avoids dynamic layouts and complex
+        behaviors, favoring static positioning and explicit configuration to
+        integrate cleanly with window manager workflows.
+      </p>
+
+      <h3>Implementation</h3>
+      <p>
+        Icebar is implemented in Go and organized into clearly separated packages
+        for configuration parsing, dock logic, GUI handling, event processing,
+        and application launching. Configuration is provided through external
+        TOML files, allowing margins, transparency, monitor selection, and styling
+        to be controlled without recompilation. The application is distributed
+        as a Docker container to ensure reproducible builds and straightforward
+        deployment across Linux systems.
+      </p>
+
+      <h3>What I Learned</h3>
+      <p>
+        This project significantly improved my proficiency in Go, particularly
+        in structuring medium-sized applications, managing packages, and writing
+        clear, maintainable code. I also gained experience with Docker-based
+        distribution for desktop applications, Linux window manager integration,
+        and designing configuration-driven user interfaces.
+      </p>
+
+      <!-- LINKS -->
+      <div class="project-links">
+        <a href="https://github.com/Microttus/icebar" target="_blank" rel="noopener">
+          View source on GitHub
+        </a>
+      </div>
+
+      <div class="project-media">
+        <img
+            src="assets/images/icebar.png"
+            alt="Icebar dock running on bspwm"
+            loading="lazy" />
+      </div>
+    </div>
+  </article>
+
 
 
   <article class="project-card">
-    <span class="project-date">2025</span>
+    <span class="project-date">2024</span>
     <button class="project-header">
       <div class="project-header-main">
         <h2>Haptic Teleoperation for Industrial Robots</h2>
