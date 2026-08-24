@@ -29,13 +29,145 @@
 
 <main class="projects-container">
 
-  <!-- PROJECT ITEM -->
-  <article class="project-card featured">
-    <!-- YEAR / TIMELINE MARKER -->
-    <span class="project-date">2025</span>
-
+  <article class="project-card">
     <button class="project-header">
       <div class="project-header-main">
+        <span class="project-date">2026</span>
+        <h2>TOS-Watch</h2>
+
+        <p class="project-ingress">
+          A Raspberry Pi display application that reads glucose and trend data from
+          a local CareLink-compatible service and presents it on a MAX7219 LED matrix.
+        </p>
+
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Raspberry Pi</span>
+          <span class="tag">MAX7219</span>
+          <span class="tag">LED Matrix</span>
+          <span class="tag">Pydantic</span>
+          <span class="tag">SPI</span>
+        </div>
+      </div>
+    </button>
+
+    <div class="project-details">
+      <h3>Goals</h3>
+      <p>
+        The goal of TOS-Watch was to build a compact, glanceable display for data
+        provided by a local glucose-monitoring service. The application combines
+        network status, data validation, unit conversion, trend information, and
+        hardware rendering in a small Raspberry Pi-based system.
+      </p>
+
+      <h3>Scope</h3>
+      <p>
+        This is a personal hardware-software project for Linux-based Raspberry Pi
+        systems with SPI-enabled MAX7219 displays. It consumes the local
+        <code>/carelink/nohistory</code> endpoint exposed by an external service and
+        does not fetch data directly from CareLink or manage CareLink credentials.
+        TOS-Watch is not a medical device or a replacement for approved monitoring,
+        treatment guidance, or clinical advice.
+      </p>
+
+      <h3>Implementation</h3>
+      <p>
+        The application waits for a network connection, fetches JSON over HTTP,
+        validates the response with Pydantic, converts glucose values from mg/dL to
+        mmol/L, and renders the value, trend symbol, and stale-data status on four
+        cascaded MAX7219 modules using the <code>luma.led_matrix</code> library.
+        Supporting modules handle data processing, display symbols, terminal
+        previews, and an example systemd service for starting the application at boot.
+      </p>
+
+      <h3>What I Learned</h3>
+      <p>
+        This project brought together Python application design, HTTP data handling,
+        schema validation, Linux service deployment, and low-level Raspberry Pi
+        hardware integration. It also highlights the importance of stale-data
+        indication, privacy, and explicit safety boundaries when displaying
+        health-related information.
+      </p>
+
+      <div class="project-links">
+        <a href="https://github.com/Microttus/TOS-Watch" target="_blank" rel="noopener">
+          View source on GitHub
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <button class="project-header">
+      <div class="project-header-main">
+        <span class="project-date">2026</span>
+        <h2>IsaacLab Trace Monitor</h2>
+
+        <p class="project-ingress">
+          A cross-platform desktop application for live monitoring and offline
+          playback of Isaac Lab object trajectories and training metrics.
+        </p>
+
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">PySide6</span>
+          <span class="tag">Isaac Lab</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">SSH / rsync</span>
+          <span class="tag">Robotics</span>
+        </div>
+      </div>
+    </button>
+
+    <div class="project-details">
+      <h3>Goals</h3>
+      <p>
+        The goal of this project was to make headless robot-learning runs easier
+        to inspect without requiring Isaac Sim or Isaac Lab on the monitoring
+        computer. It provides both live visibility into active training and
+        detailed playback of previously recorded episodes.
+      </p>
+
+      <h3>Scope</h3>
+      <p>
+        Independent open-source desktop tooling for researchers working with
+        Isaac Lab. The application supports local trace folders and remote runs
+        accessed over SSH, provides native packaging for macOS and Linux, and
+        includes a reusable logging callback for Isaac Lab and Stable-Baselines3.
+      </p>
+
+      <h3>Implementation</h3>
+      <p>
+        The monitor is implemented in Python using PySide6, NumPy, and Matplotlib.
+        It renders rotatable 3D object trajectories alongside position,
+        orientation, reward, return, and episode-length plots. Remote monitoring
+        uses a restricted SSH and rsync workflow, while bounded CSV trace files
+        keep storage and synchronization predictable. PyInstaller build scripts,
+        automated tests, and GUI smoke tests support distribution across macOS
+        and Linux.
+      </p>
+
+      <h3>What I Learned</h3>
+      <p>
+        This project strengthened my experience in scientific desktop application
+        design, interactive 3D visualization, and time-series data handling. It
+        also provided practical insight into secure remote synchronization,
+        cross-platform packaging, and testing GUI applications for research use.
+      </p>
+
+      <div class="project-links">
+        <a href="https://github.com/Microttus/isaaclab-trace-monitor" target="_blank" rel="noopener">
+          View source on GitHub
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- PROJECT ITEM -->
+  <article class="project-card featured">
+    <button class="project-header">
+      <div class="project-header-main">
+        <span class="project-date">2025</span>
         <h2>
           Open-Source Sensorised Elastic Actuator
           <span class="badge badge-published">Published · HardwareX (Elsevier)</span>
@@ -121,11 +253,9 @@
   </article>
 
   <article class="project-card">
-    <!-- YEAR / TIMELINE MARKER -->
-    <span class="project-date">2023-2025</span>
-
     <button class="project-header">
       <div class="project-header-main">
+        <span class="project-date">2023-2025</span>
         <h2>Icebar – Minimal Dock for Tiling Window Managers</h2>
 
         <p class="project-ingress">
@@ -200,9 +330,9 @@
 
 
   <article class="project-card">
-    <span class="project-date">2024</span>
     <button class="project-header">
       <div class="project-header-main">
+        <span class="project-date">2024</span>
         <h2>Haptic Teleoperation for Industrial Robots</h2>
 
         <p class="project-ingress">
@@ -277,11 +407,9 @@
   </article>
 
   <article class="project-card">
-    <!-- YEAR / TIMELINE MARKER -->
-    <span class="project-date">2023</span>
-
     <button class="project-header">
       <div class="project-header-main">
+        <span class="project-date">2023</span>
         <h2>Parametric Gear Generator</h2>
 
         <p class="project-ingress">
@@ -340,11 +468,9 @@
 
 
   <article class="project-card">
-    <!-- YEAR / TIMELINE MARKER -->
-    <span class="project-date">2022</span>
-
     <button class="project-header">
       <div class="project-header-main">
+        <span class="project-date">2022</span>
         <h2>Drone Arena for Reinforcement Learning</h2>
 
         <p class="project-ingress">
@@ -417,11 +543,9 @@
   </article>
 
   <article class="project-card">
-    <!-- YEAR / TIMELINE MARKER -->
-    <span class="project-date">2022</span>
-
     <button class="project-header">
       <div class="project-header-main">
+        <span class="project-date">2022</span>
         <h2>LightCar Race – Autonomous Line-Following Competition</h2>
 
         <p class="project-ingress">
@@ -505,11 +629,9 @@
   </article>
 
   <article class="project-card">
-    <!-- YEAR / TIMELINE MARKER -->
-    <span class="project-date">2021</span>
-
     <button class="project-header">
       <div class="project-header-main">
+        <span class="project-date">2021</span>
         <h2>
           Mechatronics Home Lab for Undergraduate Teaching
           <span class="badge badge-published">Student Paper · UiA</span>

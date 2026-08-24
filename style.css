@@ -272,23 +272,28 @@ body.about-page .content-box strong {
 }
 
 .projects-container {
-  padding-top: calc(var(--header-h) + 40px);
+  padding-top: 140px;
   padding-bottom: 60px;
-  max-width: 1000px;
+  width: calc(100% - 40px);
+  max-width: 900px;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 30px;
 }
 
 /* Project card */
 .project-card {
-  background: rgba(255,255,255,0.92);
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 /* Header (clickable) */
@@ -298,7 +303,7 @@ body.about-page .content-box strong {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 24px 28px;
+  padding: 25px;
   width: 100%;
 }
 
@@ -310,9 +315,9 @@ body.about-page .content-box strong {
 
 .project-header h2 {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 500;
-  color: #111;
+  color: #000;
 }
 
 .project-ingress {
@@ -324,20 +329,18 @@ body.about-page .content-box strong {
 }
 
 .project-date {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.9rem;
-  color: #666;
+  margin: 0 0 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333;
   white-space: nowrap;
-  flex-shrink: 0;
-  margin-left: 16px;
-  margin-top: 16px;
 }
 
 
 /* Expandable section */
 .project-details {
   display: none;
-  padding: 0 28px 28px 28px;
+  padding: 0 25px 25px;
   color: #222;
 }
 
